@@ -1,21 +1,37 @@
 <meta charset="utf-8">
 <div class="container mx-auto">
   <header class="bg-white shadow">
-    <nav class="flex items-center justify-between flex-wrap p-6">
-      <div class="flex items-center flex-shrink-0 text-indigo-600 mr-6">
-        <span class="font-semibold text-xl tracking-tight">Mi Aplicación</span>
-      </div>
-      <div class="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-indigo-600 border-indigo-600 hover:text-indigo-800 hover:border-indigo-800">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-        </button>
-      </div>
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div class="text-sm lg:flex-grow">
-          <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-600 hover:text-indigo-800 mr-4">Inicio</a>
-          <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-600 hover:text-indigo-800 mr-4">Acerca de</a>
-          <a href="#" class="block mt-4 lg:inline-block lg:mt-0 text-indigo-600 hover:text-indigo-800">Contacto</a>
+    <nav class="bg-green-700 shadow-md">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <div class="flex items-center">
+            <button class="text-gray-600 focus:outline-none lg:hidden" (click)="toggleMenu()">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <a href="https://www.utdelacosta.edu.mx/">
+              <img src="./Bienvenidos\_files/logo-ut.png" alt="Universidad Tecnológica de la Costa" class="h-8">
+            </a>
+          </div>
+          <div class="hidden lg:flex">
+            <ul class="flex space-x-4">
+              <li><a href="https://www.utdelacosta.edu.mx/index.php/philosophy" class="text-white hover:text-gray-800">¡CONÓCENOS!<br><span class="text-sm">FILOSOFÍA</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/index.php/career" class="text-white hover:text-gray-800">PLAN<br><span class="text-sm">CARRERAS</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/recorrido\_virtual" class="text-white hover:text-gray-800">RECORRIDO<br><span class="text-sm">¡VIRTUAL!</span></a></li>
+              <li><a href="http://siest.utdelacosta.edu.mx/dexter" class="text-white hover:text-gray-800">SIEST<br><span class="text-sm">EXTERNO</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/index.php/sala" class="text-white hover:text-gray-800">SALA <br><span class="text-sm">DE LECTURA</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/index.php/docentes" class="text-white hover:text-gray-800">NUESTROS<br><span class="text-sm">DOCENTES</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/index.php/oferta/all" class="text-white hover:text-gray-800">BOLSA <br><span class="text-sm">DE TRABAJO</span></a></li>
+              <li><a href="https://www.utdelacosta.edu.mx/transparencia" class="text-white hover:text-gray-800">TRANSPARENCIA <br><span class="text-sm">PORTAL</span></a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="lg:hidden" *ngIf="isMenuOpen">
+        <ul class="px-4 py-2">
+          <!-- Aquí puedes agregar los elementos del menú móvil -->
+        </ul>
       </div>
     </nav>
   </header>
